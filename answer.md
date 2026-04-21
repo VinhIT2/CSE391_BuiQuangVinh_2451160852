@@ -184,3 +184,42 @@ Trình duyệt phải đọc *toàn bộ* table trước khi render (vì cần t
 
 # PHẦN B: THỰC HÀNH
 
+__Câu B1:__
+
+![alt text](/todo-app-btl/assets/image.png)
+
+__Câu B2:__
+
+![alt text](./assets/image-0.png)
+![alt text](./assets/image-1.png)
+![alt text](./assets/image-2.png)
+
+__Câu B3:__
+
+![alt text](./assets/img1.png)
+
+Lỗi 1: Dòng 1 <!DOCTYPE> thiếu "html" — Sửa thành <!DOCTYPE html>
+
+Lỗi 2: Dòng 5 Thẻ `<title>` chưa đóng — Thêm `</title>`
+
+Lỗi 3: Dòng 6 charset="utf8" sai chuẩn — Sửa thành UTF-8
+
+Lỗi 4: Dòng 9 Thẻ `<h1>` không đóng đúng — Sửa `</h1>`
+
+Lỗi 5: Dòng 13 Thẻ `<a>` không đóng — Sửa `</a>`
+
+Lỗi 6: Dòng 18 img thiếu dấu ngoặc kép và thiếu alt — Sửa src="iphone.jpg" và thêm alt
+
+Lỗi 7: Dòng 20 Thẻ `<b>` đóng sai vị trí — Đổi thành `<strong>` và đóng đúng thứ tự
+
+Lỗi 8: Dòng 26 Table header dùng `<td>` thay vì `<th>`Sửa thành `<th>`
+
+Lỗi 9: Dòng 36 Dùng 2 thẻ `<main>` là sai semantic — Đổi cái thứ 2 thành `<aside>`
+
+Lỗi 10: Dòng 41 Thẻ `<p>` trong footer chưa đóng — Thêm `</p>`
+
+Lỗi 11: Thiếu thuộc tính lang trong `<html>` Thêm lang="vi"
+
+Lỗi 12: Heading nhảy cấp (h1 → h3) Sửa h3 thành h2 cho đúng semantic
+
+__Câu B4:__
