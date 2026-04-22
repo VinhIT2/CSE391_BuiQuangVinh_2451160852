@@ -186,7 +186,11 @@ Trình duyệt phải đọc *toàn bộ* table trước khi render (vì cần t
 
 __Câu B1:__
 
+<<<<<<< HEAD
 ![alt text](./assets/image.png)
+=======
+![alt text](/todo-app-btl/assets/image.png)
+>>>>>>> 4479fa00d111bb899b36fd04016c7543c2bff9ed
 
 __Câu B2:__
 
@@ -223,6 +227,7 @@ Lỗi 11: Thiếu thuộc tính lang trong `<html>` Thêm lang="vi"
 Lỗi 12: Heading nhảy cấp (h1 → h3) Sửa h3 thành h2 cho đúng semantic
 
 __Câu B4:__
+<<<<<<< HEAD
 
 1. 3 thẻ semantic HTML5 mà trang đó sử dụng (Tiki)
 
@@ -395,3 +400,5 @@ Viết 1 đoạn phản biện (200-300 từ), phải bao gồm:
 **Bài làm:**
 
 Quan điểm “dùng `<div>` cho mọi thứ” nghe có vẻ nhanh, nhưng về kỹ thuật lại tạo ra chi phí ẩn đáng kể. Thứ nhất là **SEO**: các công cụ tìm kiếm không chỉ đọc nội dung mà còn dựa vào cấu trúc ngữ nghĩa để hiểu trang. Những thẻ như `<header>`, `<main>`, `<article>`, `<nav>` giúp xác định rõ đâu là nội dung chính, đâu là điều hướng, từ đó cải thiện khả năng index và xếp hạng. Nếu chỉ dùng `<div>`, bạn phải phụ thuộc vào class — vốn không mang nhiều giá trị ngữ nghĩa đối với bot. Thứ hai là **Accessibility (trợ năng)**: các screen reader như NVDA hay VoiceOver dựa vào semantic HTML để điều hướng nhanh. Người dùng có thể nhảy trực tiếp tới `<main>` hoặc `<nav>` thay vì đọc toàn bộ trang. Nếu dùng `<div>`, bạn buộc phải bổ sung ARIA phức tạp hơn và dễ sai. Ví dụ cụ thể: breadcrumb sử dụng `<nav aria-label="breadcrumb">` kết hợp `<ol>` giúp công cụ hỗ trợ hiểu đây là điều hướng có thứ tự; nếu thay bằng `<div>`, bạn phải “vá” thêm nhiều thuộc tính mà vẫn kém hiệu quả. Tuy vậy, `<div>` vẫn phù hợp trong các trường hợp layout thuần túy như wrapper cho flex/grid hoặc grouping không mang ý nghĩa nội dung. Vấn đề không phải loại bỏ `<div>`, mà là sử dụng đúng vai trò: semantic cho ý nghĩa, `<div>` cho trình bày.
+
+
