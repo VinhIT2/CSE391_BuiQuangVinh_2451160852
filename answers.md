@@ -202,7 +202,7 @@ __Câu B1:__
 
 __Câu B2:__
 
-- Tạo file *products.html* trang danh sách sản phẩm
+- Tạo file *products.html* — trang danh sách sản phẩm
 
 5đ: 4+ articles product card đúng cấu trúc
 
