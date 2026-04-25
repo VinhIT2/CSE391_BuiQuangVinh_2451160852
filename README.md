@@ -1,1 +1,1 @@
-# 📋Sinh viên Bùi Quang Vinh - 66HTTT2 : Nộp phiếu bài tập 1 - Nền tảng và phát triển web
+# 📋Sinh viên Bùi Quang Vinh - 66HTTT2 - Phiếu bài tập nền tảng và phát triển web
