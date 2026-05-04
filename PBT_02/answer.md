@@ -150,7 +150,7 @@ __CÂU A5:__  So sánh `<figure>` vs `<img>`
 
 ```
 
-> Dùng `<figure>` khi ảnh cần chú thích đi kèm `<figcaption>` hoặc khi ảnh mang ý nghĩa tách biệt với luồng văn bản chính
+> Dùng `<figure>` khi ảnh cần chú thích mô tả đi kèm `<figcaption>` hoặc khi ảnh mang ý nghĩa tách biệt với luồng văn bản chính
 
 # PHẦN B
 
@@ -159,4 +159,165 @@ __Bài B1:__
 ![alt text](./assets/image-B1.png)
 
 __Bài B2:__
+
+![alt text](./assets/image-B2.png)
+![alt text](./assets/image2-B2.png)
+__Bài B3:__
+
+![alt text](./assets/image-B3.png)
+![alt text](./assets/image2-B3.png)
+
+
+# PHẦN C
+
+__Câu C1:__
+
+- Lỗi 0: Dòng 1 - form thiếu `action` và `method` để submit
+
+Sửa:
+```html
+<form action="#" method="POST">
+```
+
+- Lỗi 1: Dòng 2 - Input “Tên” không có `<label for="...">`, vi phạm accessibility
+
+Sửa:
+```html
+<label for="name">Tên:</label>
+<input type="text" id="name" name="name" required>
+```
+
+- Lỗi 2: Dòng 4 - Input email không có `<label>`
+
+Sửa:
+```html
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" placeholder="Email của bạn" required>
+```
+
+- Lỗi 3: Dòng 6 - Input mật khẩu không có `<label>`
+
+Sửa:
+```html
+<label for="password">Mật khẩu:</label>
+<input type="password" id="password" name="password" required>
+```
+
+- Lỗi 4: Dòng 7 - Input nhập lại mật khẩu không có `<label>`
+
+Sửa:
+```html
+<label for="confirm-password">Nhập lại mật khẩu:</label>
+<input type="password" id="confirm-password" name="confirm_password" required>
+```
+
+- Lỗi 5: Dòng 9 - Phone dùng `type="text"` thay vì `tel`
+
+Sửa:
+```html
+<label for="phone">Phone:</label>
+<input type="tel" id="phone" name="phone" placeholder="0901234567" required>
+```
+
+- Lỗi 6: Dòng 9 - Phone có `value` mặc định, không có `placeholder`(UX kém)
+
+Sửa:
+```html
+<input type="tel" id="phone" name="phone" placeholder="0901234567" required>
+```
+
+- Lỗi 7: Dòng 11 - `<select>` không có `<label>`
+
+Sửa:
+```html
+<label for="city">Thành phố:</label>
+<select id="city" name="city" required>
+    <option value="">--Chọn--</option>
+    <option value="hn">Hà Nội</option>
+    <option value="hcm">TP.HCM</option>
+</select>
+```
+
+- Lỗi 8: Dòng 15 - Thiếu `checkbox` cho “đồng ý điều khoản” và `for` của label
+
+Sửa:
+```html
+<input type="checkbox" id="agree" name="agree" required>
+<label for="agree">Tôi đồng ý điều khoản</label>
+```
+
+**Form hoàn chỉnh sau khi sửa**
+
+```html
+<form action="#" method="POST">
+    <label for="name">Tên:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Email của bạn" required>
+
+    <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirm-password">Nhập lại mật khẩu:</label>
+    <input type="password" id="confirm-password" name="confirm_password" required>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" placeholder="0901234567" required>
+
+    <label for="city">Thành phố:</label>
+    <select id="city" name="city" required>
+        <option value="">--Chọn--</option>
+        <option value="hn">Hà Nội</option>
+        <option value="hcm">TP.HCM</option>
+    </select>
+
+    <input type="checkbox" id="agree" name="agree" required>
+    <label for="agree">Tôi đồng ý điều khoản</label>
+
+    <input type="submit" value="Gửi">
+</form>
+```
+
+Câu C2 (10đ) — Validation Strategy
+
+**Pattern Regex:**
+
+CMND/CCCD (12 chữ số):
+```regex
+^[0-9]{12}$
+```
+
+Số tài khoản (10–15 chữ số):
+```regex
+^[0-9]{10,15}$
+```
+
+PIN (6 chữ số, ẩn):
+```html
+<input type="password" pattern="^[0-9]{6}$" required>
+```
+
+**HTML5 validation có đủ an toàn không?**
+
+Không đủ. Vì:
+- chạy phía client, dễ bypass  
+- có thể gửi request thủ công  
+- không kiểm soát logic backend  
+- không chống tấn công  
+
+> Bắt buộc validate ở backend.
+
+**3 loại validation HTML5 không làm được**
+
+1. So khớp dữ liệu (password = confirm)  
+2. Logic phụ thuộc dữ liệu (số tiền ≤ số dư)  
+3. Rule nghiệp vụ (OTP, kiểm tra tồn tại, ...)  
+
+**2 rủi ro nếu chỉ validate frontend**
+
+1. Gửi dữ liệu độc hại lên server  
+2. Dẫn đến SQL Injection / XSS  
+
+# PHẦN D
 
