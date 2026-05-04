@@ -26,7 +26,7 @@ Google đọc HTML để **hiểu cấu trúc và nội dung** trang. Khi toàn 
 
 ---
 
-❌ 4 Lỗi Semantic (+ bonus)
+__*4 Lỗi Semantic*__
 
 **Lỗi 1 — Thiếu `<header>`**  
 `<div class="header">` không cho Google biết đây là phần đầu trang.
@@ -45,7 +45,7 @@ Thiếu `alt` → Google Images không index được, vi phạm accessibility.
 
 ---
 
-## ✅ Code đã sửa
+## Code đã sửa
 
 ```html
 <header>
@@ -72,7 +72,7 @@ Thiếu `alt` → Google Images không index được, vi phạm accessibility.
 
 ---
 
-## 📋 Bảng tóm tắt
+## Bảng tóm tắt
 
 | # | Lỗi | Cũ | Sửa |
 |---|---|---|---|
@@ -419,3 +419,7 @@ Viết 1 đoạn phản biện (200-300 từ), phải bao gồm:
 
 Quan điểm “dùng `<div>` cho mọi thứ” nghe có vẻ nhanh, nhưng về kỹ thuật lại tạo ra chi phí ẩn đáng kể. Thứ nhất là **SEO**: các công cụ tìm kiếm không chỉ đọc nội dung mà còn dựa vào cấu trúc ngữ nghĩa để hiểu trang. Những thẻ như `<header>`, `<main>`, `<article>`, `<nav>` giúp xác định rõ đâu là nội dung chính, đâu là điều hướng, từ đó cải thiện khả năng index và xếp hạng. Nếu chỉ dùng `<div>`, bạn phải phụ thuộc vào class — vốn không mang nhiều giá trị ngữ nghĩa đối với bot. Thứ hai là **Accessibility (trợ năng)**: các screen reader như NVDA hay VoiceOver dựa vào semantic HTML để điều hướng nhanh. Người dùng có thể nhảy trực tiếp tới `<main>` hoặc `<nav>` thay vì đọc toàn bộ trang. Nếu dùng `<div>`, bạn buộc phải bổ sung ARIA phức tạp hơn và dễ sai. Ví dụ cụ thể: breadcrumb sử dụng `<nav aria-label="breadcrumb">` kết hợp `<ol>` giúp công cụ hỗ trợ hiểu đây là điều hướng có thứ tự; nếu thay bằng `<div>`, bạn phải “vá” thêm nhiều thuộc tính mà vẫn kém hiệu quả. Tuy vậy, `<div>` vẫn phù hợp trong các trường hợp layout thuần túy như wrapper cho flex/grid hoặc grouping không mang ý nghĩa nội dung. Vấn đề không phải loại bỏ
 `<div>`, mà là sử dụng đúng vai trò: semantic cho ý nghĩa, `<div>` cho trình bày.
+
+# PHẦN D:
+
+Link video: https://drive.google.com/drive/folders/1vHVG_9xOzeqa9rhlkLlWDpivOsH-iePX
