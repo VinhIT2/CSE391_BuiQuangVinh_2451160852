@@ -11,6 +11,17 @@
 
   <h1>Đặt hàng</h1>
 
+  <!-- Tìm kiếm sản phẩm với datalist -->
+  <label for="search">Tìm kiếm sản phẩm:</label><br>
+  <input type="text" id="search" name="search" list="product-list" placeholder="Nhập tên sản phẩm...">
+  <datalist id="product-list">
+    <option value="iPhone 16 Pro Max 256GB Titan Đen">
+    <option value="MacBook Air M3 13 inch 8GB/256GB">
+    <option value="AirPods Pro 2 MagSafe USB-C">
+    <option value="iPad Pro M4 11 inch Wi-Fi 256GB">
+    <option value="Apple Watch Series 10 45mm">
+  </datalist>
+
   <hr>
 
   <!-- Phần 1: Giỏ hàng -->
@@ -56,6 +67,26 @@
     </tfoot>
   </table>
 
+  <!-- output tổng tiền tĩnh -->
+  <p>
+    Tổng tiền cần thanh toán:
+    <output name="total" for="search">67.960.000đ</output>
+  </p>
+
+  <!-- meter điểm tích lũy -->
+  <p>
+    Điểm tích lũy sau đơn hàng này:
+    <meter value="679" min="0" max="1000" low="200" high="700" optimum="1000">679 điểm</meter>
+    <span>679 / 1000 điểm</span>
+  </p>
+
+  <!-- progress bước đặt hàng -->
+  <p>
+    Tiến trình đặt hàng:
+    <progress value="2" max="3">Bước 2/3</progress>
+    <span>Bước 2 / 3</span>
+  </p>
+
   <hr>
 
   <form action="#" method="POST">
@@ -95,9 +126,9 @@
     <label for="address">Địa chỉ giao hàng *</label><br>
     <textarea id="address" name="address" rows="3" placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành..."
       required></textarea><br><br>
-
+      
     <label for="delivery-date">Ngày giao hàng mong muốn:</label><br>
-    <input type="date" id="delivery-date" name="delivery_date"><br><br>
+    <input type="date" id="delivery-date" name="delivery_date" min="2026-05-05"><br><br>
 
     <label for="time-slot">Khung giờ giao hàng:</label><br>
     <select id="time-slot" name="time_slot">
@@ -107,20 +138,14 @@
       <option value="evening">Tối 18–21h</option>
     </select><br><br>
 
-    <label for="delivery-days">Thời gian giao hàng (số ngày): <span id="days-value">4</span> ngày</label><br>
+    <!-- Bỏ span hiển thị value vì không dùng JS -->
+    <label for="delivery-days">Thời gian giao hàng (số ngày, kéo để chọn 1–7):</label><br>
     <input type="range" id="delivery-days" name="delivery_days" min="1" max="7" step="1" value="4"><br><br>
 
     <button type="submit" aria-label="Xác nhận đặt hàng">Xác nhận đặt hàng</button>
     <button type="reset">Nhập lại</button>
 
   </form>
-
-  <script>
-    // Set min date = ngày mai cho delivery-date
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    document.getElementById('delivery-date').min = tomorrow.toISOString().split('T')[0];
-  </script>
 
 </body>
 
