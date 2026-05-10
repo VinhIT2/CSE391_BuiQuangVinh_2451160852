@@ -396,3 +396,7 @@ body { font-size: 16px; color: #333; } /* (0,0,1) */
 ![alt text](./assets/ScreenShot/image-C2.png)
 
 ***Tài liệu tham chiếu:*** https://github.com/hieutachi/CCC_Frontend_2026/blob/main/tuan_2_css_core/09_css_selectors.md#%EF%B8%8F-specificity--ai-th%E1%BA%AFng-khi-xung-%C4%91%E1%BB%99t
+
+## PHẦN D:
+
+**Link video:** https://drive.google.com/file/d/1Eq3k6UzkjgBuEBCPBqOq7f0jp15eM0lM/view?usp=drive_link
