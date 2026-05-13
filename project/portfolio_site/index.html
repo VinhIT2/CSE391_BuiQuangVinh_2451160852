@@ -9,25 +9,25 @@
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/hero.css" />
     <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/skills.css">
   </head>
   <body>
     <header>
-      <a href="#" target="_self" class="logo">Bùi Quang Vinh</a>
+        <a href="#" target="_self" class="logo">Bùi Quang Vinh</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
 
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
 
-      <label for="menu-toggle" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-
-      <nav>
-        <label for="menu-toggle"><a href="#about">About</a></label>
-        <label for="menu-toggle"><a href="#skills">Skills</a></label>
-        <label for="menu-toggle"><a href="#portfolio">Portfolio</a></label>
-        <label for="menu-toggle"><a href="#contact">Contact</a></label>
-      </nav>
+        <nav>
+          <label for="menu-toggle"><a href="#about">About</a></label>
+          <label for="menu-toggle"><a href="#skills">Skills</a></label>
+          <label for="menu-toggle"><a href="#portfolio">Portfolio</a></label>
+          <label for="menu-toggle"><a href="#contact">Contact</a></label>
+        </nav>
     </header>
 
     <main>
@@ -61,6 +61,49 @@
           </div>
         </div>
       </section>
+      <section id="skills" class="skills-section">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>HTML5</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress html5 animate"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>CSS3</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress css3 animate"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress javascript animate"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>React</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress react animate"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
   </body>
 </html>
