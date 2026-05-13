@@ -11,16 +11,31 @@
     <link rel="stylesheet" href="./css/about.css">
 </head>
 <body>
-    <!-- Header: Logo + Nav links -->
-<header>
-    <div class="logo">Bùi Quang Vinh</div>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    <header>
+        <a href="#" target="_self" class="logo">Bùi Quang Vinh</a>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
+        <nav>
+            <label for="menu-toggle"><a href="#about">About</a></label>
+            <label for="menu-toggle"><a href="#skills">Skills</a></label>
+            <label for="menu-toggle"><a href="#portfolio">Portfolio</a></label>
+            <label for="menu-toggle"><a href="#contact">Contact</a></label>
+        </nav>
+    </header>
 
+    <main>
+        <section class="hero">
+            <h1 class="hero-title">Hi, I'm <span>Bùi Quang Vinh</span></h1>
+            <p class="hero-subtitle">Full-Stack Developer | UI Designer | Problem Solver</p>
+            <a href="#portfolio" class="cta-button">View My Work</a>
+        </section>
+    </main>
 </body>
 </html>
