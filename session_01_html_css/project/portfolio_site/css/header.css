@@ -1,0 +1,132 @@
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    /* Tăng chiều cao Header lên 90px để tạo khoảng trống cực kỳ sang trọng */
+    height: 100px; 
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Tăng khoảng cách lề hai bên từ 10% lên 12% giúp bố cục dồn vào trung tâm hơn */
+    padding: 0 15%; 
+    z-index: 1000;
+}
+
+.logo {
+    /* Tăng kích thước chữ Logo to và rõ nét hơn */
+    font-size: 2.3rem; 
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+nav {
+    display: flex;
+    /* Tăng khoảng cách (gap) giữa các chữ Menu từ 2rem (32px) lên 3.5rem (56px) */
+    gap: 3.5rem; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #475569; /* Sử dụng màu xám tối trung tính sang trọng */
+    font-weight: 600; /* Tăng độ dày chữ lên 600 để chữ nhìn rõ và sắc nét */
+    /* Phóng to chữ menu lên 1.15rem (khoảng 18.4px) */
+    font-size: 1.4rem; 
+    position: relative;
+    padding: 0.5rem 0; /* Tăng khoảng đệm trên dưới của thẻ a */
+    transition: color var(--transition-fast);
+}
+
+/* --- Hiệu ứng đường gạch chân mượt mà khi di chuột --- */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Đẩy đường gạch chân dịch xuống dưới một chút cho thoáng */
+    left: 0;
+    width: 100%;
+    height: 3px; /* Tăng độ dày đường gạch chân lên 3px để tương xứng với chữ to */
+    background-color: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--transition-fast);
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Ẩn checkbox kích hoạt */
+.menu-toggle {
+    display: none;
+}
+
+/* Nút Hamburger trên máy tính mặc định ẩn */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 28px; /* Tăng kích thước thanh gạch Hamburger */
+    height: 3px;
+    background-color: var(--color-dark);
+    border-radius: 2px;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* --- Xử lý Responsive trên Mobile (< 768px) --- */
+@media (max-width: 767px) {
+    header {
+        height: 75px; /* Trên Mobile thu nhỏ nhẹ lại để không chiếm diện tích */
+        padding: 0 6%;
+    }
+
+    .logo {
+        font-size: 1.6rem; /* Thu nhỏ logo trên điện thoại */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 75px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 75px);
+        background-color: var(--color-light);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        transition: right var(--transition-fast);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .menu-toggle:checked ~ nav {
+        right: 0;
+    }
+
+    /* Biến đổi nút Hamburger sang dấu X trên Mobile */
+    .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
