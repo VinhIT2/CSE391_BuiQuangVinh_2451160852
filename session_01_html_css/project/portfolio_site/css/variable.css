@@ -6,6 +6,5 @@
     --color-text: #334155;       /* Slate text */
     --color-orange: orange;
     --font-main: 'Segoe UI', sans-serif;
-    --header-height: 70px;
     --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
