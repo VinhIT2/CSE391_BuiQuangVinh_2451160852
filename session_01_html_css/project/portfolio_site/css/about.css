@@ -1,11 +1,10 @@
 .about-section {
-    padding: 100px 0;
+    padding: 100px 15%;
     background-color: var(--color-light);
     width: 100%;
 }
 .about-section .container {
     width: 100%;
-    max-width: 1140px;
     margin: 0 auto;
 }
 
@@ -14,6 +13,7 @@
     grid-template-columns: 1fr 1.5fr; 
     gap: 3rem; 
     align-items: center;
+    justify-content: space-between;
 }
 
 .about-image {
