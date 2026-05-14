@@ -1,175 +1,266 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="./css/variable.css" />
-    <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/hero.css" />
-    <link rel="stylesheet" href="./css/about.css" />
-    <link rel="stylesheet" href="./css/skills.css" />
-    <link rel="stylesheet" href="./css/portfolio.css">
-  </head>
-  <body>
-    <header>
-      <a href="#" target="_self" class="logo">Bùi Quang Vinh</a>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
 
-      <label for="menu-toggle" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="./css/variable.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/header.css" />
+  <link rel="stylesheet" href="./css/hero.css" />
+  <link rel="stylesheet" href="./css/about.css" />
+  <link rel="stylesheet" href="./css/skills.css" />
+  <link rel="stylesheet" href="./css/portfolio.css" />
+  <link rel="stylesheet" href="./css/contact.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+</head>
 
-      <nav>
-        <label for="menu-toggle"><a href="#about">About</a></label>
-        <label for="menu-toggle"><a href="#skills">Skills</a></label>
-        <label for="menu-toggle"><a href="#portfolio">Portfolio</a></label>
-        <label for="menu-toggle"><a href="#contact">Contact</a></label>
-      </nav>
-    </header>
+<body>
+  <header>
+    <a href="#" target="_self" class="logo">Bùi Quang Vinh</a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
 
-    <main>
-      <section class="hero">
-        <h1 class="hero-title">Hi, I'm <span>Bùi Quang Vinh</span></h1>
-        <p class="hero-subtitle">
-          Full-Stack Developer | UI Designer | Problem Solver
-        </p>
-        <a href="#portfolio" class="cta-button">View My Work</a>
-      </section>
-      <!-- about -->
-      <section id="about" class="about-section">
-        <div class="container">
-          <div class="about-grid">
-            <div class="about-image">
-              <img
-                src="https://www.vjol.info/wp-content/uploads/2025/12/hinh-nen-meme-meo.jpg"
-                alt="Profile Photo"
-              />
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav>
+      <label for="menu-toggle"><a href="#about">About</a></label>
+      <label for="menu-toggle"><a href="#skills">Skills</a></label>
+      <label for="menu-toggle"><a href="#portfolio">Portfolio</a></label>
+      <label for="menu-toggle"><a href="#contact">Contact</a></label>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="hero-title">Hi, I'm <span>Bùi Quang Vinh</span></h1>
+      <p class="hero-subtitle">
+        Full-Stack Developer | UI Designer | Problem Solver
+      </p>
+      <a href="#portfolio" class="cta-button">View My Work</a>
+    </section>
+    <!-- about -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image">
+            <img src="https://www.vjol.info/wp-content/uploads/2025/12/hinh-nen-meme-meo.jpg" alt="Profile Photo" />
+          </div>
+          <div class="about-content">
+            <h2>About Me</h2>
+            <p class="lead">
+              I'm a passionate developer with 3+ years of experience building
+              web applications.
+            </p>
+            <p>
+              Specialized in Frontend development with React and Vue. Also
+              experienced in Backend with Node.js and Python.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- skills -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>HTML5</span>
+              <span>95%</span>
             </div>
-            <div class="about-content">
-              <h2>About Me</h2>
-              <p class="lead">
-                I'm a passionate developer with 3+ years of experience building
-                web applications.
-              </p>
-              <p>
-                Specialized in Frontend development with React and Vue. Also
-                experienced in Backend with Node.js and Python.
-              </p>
+            <div class="skill-bar">
+              <div class="skill-progress html5"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>CSS3</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress css3"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>JavaScript</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress javascript"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>React</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress react"></div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- skills -->
-      <section id="skills" class="skills-section">
-        <div class="container">
-          <h2>My Skills</h2>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span>HTML5</span>
-                <span>95%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress html5"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span>CSS3</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress css3"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span>JavaScript</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress javascript"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span>React</span>
-                <span>80%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress react"></div>
-              </div>
-            </div>
-          </div>
+      </div>
+    </section>
+    <!-- portfolio -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <h2>My Portfolio</h2>
+
+        <div class="portfolio-filters">
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn">Web</button>
+          <button class="filter-btn">Mobile</button>
+          <button class="filter-btn">Design</button>
         </div>
-      </section>
-      <!-- portfolio -->
-      <section id="portfolio" class="portfolio-section">
-        <div class="container">
-          <h2>My Portfolio</h2>
 
-          <div class="portfolio-filters">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Web</button>
-            <button class="filter-btn">Mobile</button>
-            <button class="filter-btn">Design</button>
-          </div>
+        <div class="portfolio-grid">
+          <a href="#project1" class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
+              alt="Project 1" />
+            <div class="portfolio-overlay">
+              <h3>E-Commerce Website</h3>
+              <p>React + Node.js</p>
+            </div>
+          </a>
 
-          <div class="portfolio-grid">
-            <a href="#project1" class="portfolio-item">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80" alt="Project 1" />
-              <div class="portfolio-overlay">
-                <h3>E-Commerce Website</h3>
-                <p>React + Node.js</p>
-              </div>
-            </a>
+          <a href="#project2" class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format&fit=crop&q=80"
+              alt="Project 2" />
+            <div class="portfolio-overlay">
+              <h3>Social Media App</h3>
+              <p>Vue.js + Firebase</p>
+            </div>
+          </a>
 
-            <a href="#project2" class="portfolio-item">
-              <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format&fit=crop&q=80" alt="Project 2" />
-              <div class="portfolio-overlay">
-                <h3>Social Media App</h3>
-                <p>Vue.js + Firebase</p>
-              </div>
-            </a>
+          <a href="#project3" class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"
+              alt="Project 3" />
+            <div class="portfolio-overlay">
+              <h3>SaaS Dashboard</h3>
+              <p>Next.js + Tailwind</p>
+            </div>
+          </a>
 
-            <a href="#project3" class="portfolio-item">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="Project 3" />
-              <div class="portfolio-overlay">
-                <h3>SaaS Dashboard</h3>
-                <p>Next.js + Tailwind</p>
-              </div>
-            </a>
+          <a href="#project4" class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1510017803434-a899398421b3?w=800&auto=format&fit=crop&q=80"
+              alt="Project 4" />
+            <div class="portfolio-overlay">
+              <h3>Fitness Tracker App</h3>
+              <p>React Native</p>
+            </div>
+          </a>
 
-            <a href="#project4" class="portfolio-item">
-              <img src="https://images.unsplash.com/photo-1510017803434-a899398421b3?w=800&auto=format&fit=crop&q=80" alt="Project 4" />
-              <div class="portfolio-overlay">
-                <h3>Fitness Tracker App</h3>
-                <p>React Native</p>
-              </div>
-            </a>
+          <a href="#project5" class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop&q=80"
+              alt="Project 5" />
+            <div class="portfolio-overlay">
+              <h3>E-Wallet Mobile App</h3>
+              <p>Flutter + Dart</p>
+            </div>
+          </a>
 
-            <a href="#project5" class="portfolio-item">
-              <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop&q=80" alt="Project 5" />
-              <div class="portfolio-overlay">
-                <h3>E-Wallet Mobile App</h3>
-                <p>Flutter + Dart</p>
-              </div>
-            </a>
-
-            <a href="#project6" class="portfolio-item">
-              <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&h=600&fit=crop&q=80" alt="Project 6" />
-              <div class="portfolio-overlay">
-                <h3>Travel UI/UX Concept</h3>
-                <p>Figma Design</p>
-              </div>
-            </a>
-          </div>
+          <a href="#project6" class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&h=600&fit=crop&q=80"
+              alt="Project 6" />
+            <div class="portfolio-overlay">
+              <h3>Travel UI/UX Concept</h3>
+              <p>Figma Design</p>
+            </div>
+          </a>
         </div>
-      </section>
-    </main>
-  </body>
+      </div>
+    </section>
+    <!-- lightbox -->
+    <div id="project1" class="lightbox">
+      <div class="lightbox-content">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
+          alt="Project 1 Large" />
+      </div>
+    </div>
+
+    <div id="project2" class="lightbox">
+      <div class="lightbox-content">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format&fit=crop&q=80"
+          alt="Project 2 Large" />
+      </div>
+    </div>
+
+    <div id="project3" class="lightbox">
+      <div class="lightbox-content">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"
+          alt="Project 3 Large" />
+      </div>
+    </div>
+
+    <div id="project4" class="lightbox">
+      <div class="lightbox-content">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1510017803434-a899398421b3?w=800&auto=format&fit=crop&q=80"
+          alt="Project 4 Large" />
+      </div>
+    </div>
+
+    <div id="project5" class="lightbox">
+      <div class="lightbox-content">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop&q=80"
+          alt="Project 5 Large" />
+      </div>
+    </div>
+
+    <div id="project6" class="lightbox">
+      <div class="lightbox-content">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&h=600&fit=crop&q=80"
+          alt="Project 6 Large" />
+      </div>
+    </div>
+    <!-- contact -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Get In Touch</h2>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>Feel free to reach out. I'm always open to discussing new projects.</p>
+            <div class="info-item">
+              <span class="icon">📧</span>
+              <span>your.email@example.com</span>
+            </div>
+            <div class="info-item">
+              <span class="icon">📍</span>
+              <span>Hanoi, Vietnam</span>
+            </div>
+          </div>
+
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+</body>
+
 </html>
