@@ -87,3 +87,14 @@
 ## PHẦN B
 
 ### Câu B1:
+
+- Sidebar và header bám dính vào viewpoint khi scroll
+
+![alt text](./assets/Screenshot/image-B1.png)
+
+- Badge trên card:
+
+![alt text](image.png)
+
+### Câu B2:
+
