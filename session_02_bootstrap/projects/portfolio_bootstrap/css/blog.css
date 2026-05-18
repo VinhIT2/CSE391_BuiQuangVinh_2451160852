@@ -1,14 +1,13 @@
-/* Sử dụng các biến token của thầy để cấu hình hiệu ứng dính (Sticky) */
 @media (min-width: 992px) {
     .sticky-sidebar {
         position: sticky;
-        top: 100px; /* Thấp hơn menu navbar tránh đè chữ */
+        top: 100px;
         z-index: 1020;
         max-height: calc(100vh - 120px);
-        overflow-y: auto; /* Tự cuộn nội bộ mượt mà nếu widgets quá dài */
-        scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+        overflow-y: auto;
+        scrollbar-width: none;
     }
     .sticky-sidebar::-webkit-scrollbar {
-        width: 0; /* Ẩn thanh cuộn trên Chrome/Safari */
+        width: 0;
     }
 }
