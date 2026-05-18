@@ -1,6 +1,5 @@
 /* Custom Bootstrap Theme - Teal/Slate Scheme (Exercise 2.4) */
 :root {
-    /* Khai báo hệ màu Teal cố định */
     --primary: #14b8a6;           /* Teal 500 */
     --primary-dark: #0d9488;      /* Teal 600 */
     --primary-light: rgba(20, 184, 166, 0.1);
@@ -11,90 +10,167 @@
     --danger: #ef4444;
     --light: #f8fafc;
     --dark: #0f172a;              /* Slate 900 */
-    
-    /* Khai báo dải màu Slate cụ thể để sửa lỗi trong ảnh của bạn */
+
     --slate-700: #334155;
     --slate-200: #e2e8f0;
-    
+
     --text-muted: #94a3b8;
     --transition-fast: 0.15s ease;
     --transition-normal: 0.3s ease;
-    
-    /* Ánh xạ ngược lại các biến cốt lõi của Bootstrap */
+
     --bs-primary: var(--primary);
     --bs-primary-rgb: 20, 184, 166;
 }
 
-/* Light mode (Cấu hình mặc định) */
+/* Light mode */
 :root[data-theme="light"],
 :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --bg-tertiary: #f1f5f9;
+    --bg-primary: #f8fafc;
     --text-primary: #0f172a;
-    --text-secondary: var(--slate-700); /* Trỏ trực tiếp về Slate 700 */
+    --text-secondary: var(--slate-700);
     --accent-color: var(--primary);
-    --accent-hover: var(--primary-dark);
-    --accent-light: var(--primary-light);
     --card-bg: #ffffff;
     --card-border: var(--slate-200);
-    --border-color: var(--slate-200);
 }
 
-/* Dark mode (Giao diện tối) */
+/* Dark mode */
 :root[data-theme="dark"] {
     --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-tertiary: #334155;
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
-    --accent-color: #2dd4bf;       /* Teal sáng hơn cho chế độ tối */
-    --accent-hover: var(--primary);
-    --accent-light: rgba(45, 212, 191, 0.15);
+    --accent-color: #2dd4bf;
     --card-bg: #1e293b;
     --card-border: #334155;
-    --border-color: #334155;
 }
 
-/* Các lớp tiện ích bổ sung */
-.py-section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+/* ── Base ──────────────────────────────────────────────────── */
+body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-.bg-slate-50 {
-    background-color: var(--slate-50) !important;
-}
-
-.text-dark {
-    color: var(--slate-900) !important;
-}
-
-.text-secondary {
-    color: var(--slate-700) !important;
-}
-
-/* Override cấu trúc hiển thị của các Component trong Bootstrap */
+/* ── Card ──────────────────────────────────────────────────── */
 .card {
     border-radius: 16px !important;
-    background-color: #ffffff;
-    border: 1px solid var(--slate-200) !important;
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    color: var(--text-primary) !important;
+    transition: background-color var(--transition-normal), border-color var(--transition-normal);
 }
 
+.card h3, .card h5, .card h6, .card-title {
+    color: var(--text-primary) !important;
+}
+
+.card p, .card-text {
+    color: var(--text-secondary) !important;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
 .btn {
     border-radius: 8px !important;
     transition: all var(--transition-fast) !important;
 }
 
+/* ── Form controls ──────────────────────────────────────────── */
 .form-control {
     border-radius: 10px;
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text-primary) !important;
 }
 
-/* Kiểu dáng hiển thị riêng cho nhãn danh mục (Category Badges) */
+.form-control::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 1;
+}
+
+/* ── Badge ──────────────────────────────────────────────────── */
 .badge.bg-primary-light {
     background-color: var(--primary-light) !important;
     color: var(--bs-primary) !important;
     font-weight: 600;
     padding: 0.5rem 1rem;
     border-radius: 50px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX DARK MODE — Bootstrap components không tự đổi màu
+   ══════════════════════════════════════════════════════════════ */
+
+/* Card header */
+[data-theme="dark"] .card-header {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text-primary) !important;
+}
+
+/* List group items trong sidebar Categories */
+[data-theme="dark"] .list-group-item {
+    background-color: transparent !important;
+    border-color: var(--card-border) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Chữ span bên trong list-group-item */
+[data-theme="dark"] .list-group-item span:not(.badge) {
+    color: var(--text-primary) !important;
+}
+
+/* text-muted cũng cần sáng hơn trong dark mode */
+[data-theme="dark"] .text-muted {
+    color: #94a3b8 !important;
+}
+
+/* Badge bg-light trong Tags cloud */
+[data-theme="dark"] .badge.bg-light {
+    background-color: #334155 !important;
+    color: #cbd5e1 !important;
+    border-color: #475569 !important;
+}
+
+/* Input group (search sidebar) */
+[data-theme="dark"] .input-group .form-control {
+    background-color: #0f172a !important;
+    color: var(--text-primary) !important;
+    border-color: var(--card-border) !important;
+}
+
+/* Input border right (search) */
+[data-theme="dark"] .border-end-0 {
+    border-right-color: transparent !important;
+}
+
+/* Navbar khi dark mode */
+[data-theme="dark"] #mainNavbar {
+    background-color: #1e293b !important;
+}
+
+[data-theme="dark"] #mainNavbar .nav-link,
+[data-theme="dark"] #mainNavbar .navbar-brand {
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] #mainNavbar .nav-link.active {
+    color: #2dd4bf !important;
+}
+
+[data-theme="dark"] #mainNavbar .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Comment items trong dark mode */
+[data-theme="dark"] .comment-item {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+}
+
+[data-theme="dark"] .comment-reply {
+    border-left-color: var(--card-border) !important;
+}
+
+/* Progress bar track */
+[data-theme="dark"] .progress {
+    background-color: #334155 !important;
 }

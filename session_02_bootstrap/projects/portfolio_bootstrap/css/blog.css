@@ -1,9 +1,15 @@
-:root {
+/* =============================================================
+   blog.css — Blog Layout Styles
+   NOTE: Phải load SAU custom-theme.css để dùng được các biến
+   ============================================================= */
+
+/* FIX: font-family phải đặt trên body, không phải :root */
+body {
     font-family: 'Inter', sans-serif;
-    --bs-primary: #14b8a6;        /* Teal 500 */
-    --bs-primary-rgb: 20, 184, 166;
-    --bs-secondary: #64748b;      /* Slate 500 */
-    /* Custom Brand Palette */
+}
+
+:root {
+    /* Brand Palette */
     --teal-600: #0d9488;
     --primary-light: #ccfbf1;     /* Teal 100 */
     --slate-900: #0f172a;
@@ -14,7 +20,7 @@
     --transition-fast: 0.2s ease;
 }
 
-/* Custom Spacing & Utilities */
+/* ── Custom Spacing & Utilities ─────────────────────────────── */
 .py-section {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -24,51 +30,37 @@
     background-color: var(--slate-50) !important;
 }
 
-.text-dark {
-    color: var(--slate-900) !important;
-}
-
-.text-secondary {
-    color: var(--slate-700) !important;
-}
-
-/* Custom Component Tokens */
-.card {
-    border-radius: 16px !important;
-    background-color: #ffffff;
-    border: 1px solid var(--slate-200) !important;
-}
-
-.btn {
-    border-radius: 8px !important;
-    transition: all var(--transition-fast) !important;
-}
-
+/* ── Badge custom ───────────────────────────────────────────── */
 .badge.bg-primary-light {
     background-color: var(--primary-light) !important;
     color: var(--bs-primary) !important;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 50px;
 }
-/* Khống chế tiêu đề bài viết nhỏ ở sidebar không bị quá 2 dòng gây vỡ khối */
+
+/* ── Line clamp cho excerpt / tiêu đề Recent Posts ─────────── */
 .dynamic-line-clamp {
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    color: var(--slate-700);
+    text-overflow: ellipsis;
+    /* FIX: dùng biến từ custom-theme.css (load trước) */
+    color: var(--text-secondary) !important;
     transition: color var(--transition-fast);
 }
 
 .dynamic-line-clamp:hover {
-    color: var(--bs-primary);
+    /* FIX: dùng --accent-color đã định nghĩa trong custom-theme.css */
+    color: var(--accent-color) !important;
 }
 
-/* Định hình và tạo hiệu ứng di chuột đổi màu cho thẻ Tags Cloud */
+/* ── Tags Cloud hover ───────────────────────────────────────── */
 .hover-tag {
     border-color: var(--slate-200) !important;
-    padding: 0.5rem 1rem !important;
+    padding: 0.4rem 0.85rem !important;
     border-radius: 50px !important;
     transition: all var(--transition-fast);
 }
@@ -79,12 +71,48 @@
     border-color: var(--bs-primary) !important;
 }
 
-/* Hiệu ứng làm sáng nền danh mục Categories khi lướt chuột qua */
+/* ── Categories list item hover ─────────────────────────────── */
 .hover-list-item {
     transition: background-color var(--transition-fast);
     cursor: pointer;
+    /* FIX dark mode: list-group-item mặc định có nền trắng, cần override */
+    background-color: transparent !important;
+    color: var(--text-primary, var(--slate-900)) !important;
+}
+
+/* Chữ bên trong span cũng phải đổi màu theo theme */
+.hover-list-item span {
+    color: var(--text-primary, var(--slate-900)) !important;
 }
 
 .hover-list-item:hover {
-    background-color: var(--slate-50) !important;
+    background-color: rgba(20, 184, 166, 0.08) !important;
+}
+
+/* ── Sticky Sidebar (desktop only) ─────────────────────────── */
+@media (min-width: 992px) {
+    .sticky-sidebar {
+        position: sticky !important;
+        top: 5rem !important;   /* Để không bị navbar che */
+        z-index: 1020;
+    }
+}
+
+/* ── Card theming (dùng biến từ custom-theme.css) ───────────── */
+/* FIX: chỉ khai báo 1 lần, tham chiếu đúng biến */
+.card {
+    border-radius: 16px !important;
+    background-color: var(--card-bg, #ffffff) !important;
+    border: 1px solid var(--card-border, var(--slate-200)) !important;
+    color: var(--text-primary, var(--slate-900)) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-title,
+h3, h5, h6 {
+    color: var(--text-primary, var(--slate-900)) !important;
+}
+
+.card-text {
+    color: var(--text-secondary, var(--slate-700)) !important;
 }
