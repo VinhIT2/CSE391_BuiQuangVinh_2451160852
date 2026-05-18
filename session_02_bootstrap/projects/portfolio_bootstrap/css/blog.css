@@ -79,7 +79,7 @@ body {
     .sticky-sidebar {
         position: sticky !important;
         top: 5rem !important;
-        z-index: 100;
+        z-index: 1000;
     }
 }
 
