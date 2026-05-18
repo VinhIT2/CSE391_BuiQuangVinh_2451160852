@@ -1,4 +1,3 @@
-/* Custom Bootstrap Theme - Teal/Slate Scheme (Exercise 2.4) */
 :root {
     --primary: #14b8a6;           /* Teal 500 */
     --primary-dark: #0d9488;      /* Teal 600 */
@@ -43,14 +42,12 @@
     --card-border: #334155;
 }
 
-/* ── Base ──────────────────────────────────────────────────── */
 body {
     background-color: var(--bg-primary) !important;
     color: var(--text-primary) !important;
     transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-/* ── Card ──────────────────────────────────────────────────── */
 .card {
     border-radius: 16px !important;
     background-color: var(--card-bg) !important;
@@ -67,13 +64,11 @@ body {
     color: var(--text-secondary) !important;
 }
 
-/* ── Buttons ────────────────────────────────────────────────── */
 .btn {
     border-radius: 8px !important;
     transition: all var(--transition-fast) !important;
 }
 
-/* ── Form controls ──────────────────────────────────────────── */
 .form-control {
     border-radius: 10px;
     background-color: var(--card-bg) !important;
@@ -86,7 +81,6 @@ body {
     opacity: 1;
 }
 
-/* ── Badge ──────────────────────────────────────────────────── */
 .badge.bg-primary-light {
     background-color: var(--primary-light) !important;
     color: var(--bs-primary) !important;
@@ -95,11 +89,6 @@ body {
     border-radius: 50px;
 }
 
-/* ══════════════════════════════════════════════════════════════
-   FIX DARK MODE — Bootstrap components không tự đổi màu
-   ══════════════════════════════════════════════════════════════ */
-
-/* Card header */
 [data-theme="dark"] .card-header {
     background-color: var(--card-bg) !important;
     border-color: var(--card-border) !important;
