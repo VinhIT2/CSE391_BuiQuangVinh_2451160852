@@ -3,196 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Layout + Sidebar</title>
+    <title>Blog — Bùi Quang Vinh</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- FIX: custom-theme.css phải load TRƯỚC blog.css để biến CSS sẵn sàng -->
     <link rel="stylesheet" href="./css/custom-theme.css">
     <link rel="stylesheet" href="./css/blog.css">
+    <link rel="stylesheet" href="./css/comments.css">
 </head>
-<body class="bg-light">
-    <button id="theme-toggle" class="btn btn-primary position-fixed bottom-0 end-0 m-4 shadow-lg d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; border-radius: 50%; z-index: 2000;">
+<body>
+
+    <!-- FIX: Thêm Navbar để người dùng có thể navigate -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="./index.html">Bùi Quang Vinh</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fw-medium" href="./index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="./index.html#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="./index.html#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-medium" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="./index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dark mode toggle button -->
+    <button id="theme-toggle"
+        class="btn btn-primary position-fixed bottom-0 end-0 m-4 shadow-lg d-flex align-items-center justify-content-center"
+        style="width: 48px; height: 48px; border-radius: 50%; z-index: 2000;"
+        aria-label="Toggle dark mode">
         <i id="theme-toggle-icon" class="bi bi-moon-fill fs-5"></i>
     </button>
+
+    <!-- Toast notification (UX: feedback khi submit comment) -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 3000;">
+        <div id="commentToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive">
+            <div class="d-flex">
+                <div class="toast-body fw-semibold">
+                    <i class="bi bi-check-circle-fill me-2"></i>Comment posted successfully!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
     <section id="blog" class="py-5">
         <div class="container">
-            <div class="row g-4">
-                
+            <div class="row g-4 align-items-start">
+
+                <!-- ===== MAIN CONTENT (8 cols) ===== -->
                 <div class="col-lg-8 main-content">
-                    
+
+                    <!-- Blog Post 1 -->
                     <article class="card mb-4 overflow-hidden">
                         <img src="https://picsum.photos/800/450?random=1" class="card-img-top" alt="Building a Portfolio">
                         <div class="card-body p-4">
                             <span class="badge bg-primary px-3 py-2 rounded-pill">Technology</span>
                             <h3 class="card-title mt-3 h4 fw-bold">Building a Portfolio Website with Bootstrap 5</h3>
                             <p class="card-text text-muted mb-3">
-                                <small><i class="bi bi-person-fill me-1"></i>By Vinh • <i class="bi bi-calendar3 me-1"></i>Jan 15, 2026 • <i class="bi bi-clock me-1"></i>5 min read</small>
+                                <small>
+                                    <i class="bi bi-person-fill me-1"></i>By Vinh &nbsp;•&nbsp;
+                                    <i class="bi bi-calendar3 me-1"></i>Jan 15, 2026 &nbsp;•&nbsp;
+                                    <i class="bi bi-clock me-1"></i>5 min read
+                                </small>
                             </p>
-                            <p class="card-text text-secondary">Discover the best practices for structuring your portfolio code, ensuring fast load times, and creating an impactful user experience for recruiters.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill px-4">Read More</a>
+                            <p class="card-text dynamic-line-clamp">Discover the best practices for structuring your portfolio code, ensuring fast load times, and creating an impactful user experience for recruiters.</p>
+                            <a href="#" class="btn btn-outline-primary rounded-pill px-4 mt-2">Read More</a>
                         </div>
                     </article>
 
+                    <!-- Blog Post 2 -->
                     <article class="card mb-4 overflow-hidden">
                         <img src="https://picsum.photos/800/450?random=2" class="card-img-top" alt="Mastering CSS Grid">
                         <div class="card-body p-4">
                             <span class="badge bg-success px-3 py-2 rounded-pill">Design</span>
                             <h3 class="card-title mt-3 h4 fw-bold">Mastering Modern CSS Grid & Flexbox Layouts</h3>
                             <p class="card-text text-muted mb-3">
-                                <small><i class="bi bi-person-fill me-1"></i>By Vinh • <i class="bi bi-calendar3 me-1"></i>Jan 12, 2026 • <i class="bi bi-clock me-1"></i>7 min read</small>
+                                <small>
+                                    <i class="bi bi-person-fill me-1"></i>By Vinh &nbsp;•&nbsp;
+                                    <i class="bi bi-calendar3 me-1"></i>Jan 12, 2026 &nbsp;•&nbsp;
+                                    <i class="bi bi-clock me-1"></i>7 min read
+                                </small>
                             </p>
-                            <p class="card-text text-secondary">Stop struggling with alignment. Learn how to combine the power of CSS Grid and Flexbox to build highly responsive production layouts.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill px-4">Read More</a>
+                            <p class="card-text dynamic-line-clamp">Stop struggling with alignment. Learn how to combine the power of CSS Grid and Flexbox to build highly responsive production layouts.</p>
+                            <a href="#" class="btn btn-outline-primary rounded-pill px-4 mt-2">Read More</a>
                         </div>
                     </article>
 
+                    <!-- Blog Post 3 -->
                     <article class="card mb-4 overflow-hidden">
                         <img src="https://picsum.photos/800/450?random=3" class="card-img-top" alt="JavaScript Performance">
                         <div class="card-body p-4">
                             <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">JavaScript</span>
                             <h3 class="card-title mt-3 h4 fw-bold">Optimizing JavaScript for Production Environments</h3>
                             <p class="card-text text-muted mb-3">
-                                <small><i class="bi bi-person-fill me-1"></i>By Vinh • <i class="bi bi-calendar3 me-1"></i>Jan 10, 2026 • <i class="bi bi-clock me-1"></i>4 min read</small>
+                                <small>
+                                    <i class="bi bi-person-fill me-1"></i>By Vinh &nbsp;•&nbsp;
+                                    <i class="bi bi-calendar3 me-1"></i>Jan 10, 2026 &nbsp;•&nbsp;
+                                    <i class="bi bi-clock me-1"></i>4 min read
+                                </small>
                             </p>
-                            <p class="card-text text-secondary">A deep dive into debouncing, throttling, memory leak detection, and runtime profiling to make your web applications buttery smooth.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill px-4">Read More</a>
-                        </div>
-                    </article>
-                    
-                </div>
-                <div class="col-lg-8 main-content">
-                    
-                    <article class="card mb-4 overflow-hidden shadow-sm">
-                        <img src="https://picsum.photos/800/450?random=3" class="card-img-top object-fit-cover" height="250" alt="JavaScript Performance">
-                        <div class="card-body p-4">
-                            <span class="badge bg-primary-light text-primary">JavaScript</span>
-                            <h3 class="card-title mt-3 h4 fw-bold text-dark">Optimizing JavaScript for Production Environments</h3>
-                            <p class="card-text text-muted mb-3">
-                                <small><i class="bi bi-person-fill me-1"></i>By Core Team • Jan 10, 2026 • 4 min read</small>
-                            </p>
-                            <p class="text-secondary">A deep dive into debouncing, throttling, memory leak detection, and runtime profiling to make your web applications buttery smooth.</p>
-                            <a href="#" class="btn btn-outline-primary px-4">Read More</a>
+                            <p class="card-text dynamic-line-clamp">A deep dive into debouncing, throttling, memory leak detection, and runtime profiling to make your web applications buttery smooth.</p>
+                            <a href="#" class="btn btn-outline-primary rounded-pill px-4 mt-2">Read More</a>
                         </div>
                     </article>
 
+                    <!-- ===== COMMENT SECTION ===== -->
                     <div class="comment-section-wrapper mt-5">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-header bg-white pt-4 px-4 pb-2 border-bottom-0">
-                                <h5 class="mb-0 fw-bold text-dark">Leave a Comment</h5>
+
+                        <!-- Comment Form -->
+                        <div class="card mb-4 shadow-sm border-0">
+                            <div class="card-header bg-transparent pt-4 px-4 pb-2 border-bottom-0">
+                                <h5 class="mb-0 fw-bold">Leave a Comment</h5>
                             </div>
                             <div class="card-body p-4 pt-2">
-                                <form>
+                                <!-- FIX: novalidate để dùng Bootstrap validation -->
+                                <form id="commentForm" novalidate>
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
-                                            <label for="name" class="form-label text-secondary fw-medium">Name</label>
-                                            <input type="text" class="form-control bg-light py-2" id="name" required>
+                                            <label for="commentName" class="form-label fw-medium">Name</label>
+                                            <input type="text" class="form-control py-2" id="commentName" placeholder="Your name" required>
+                                            <div class="invalid-feedback">Please enter your name.</div>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label for="email" class="form-label text-secondary fw-medium">Email</label>
-                                            <input type="email" class="form-control bg-light py-2" id="email" required>
+                                            <label for="commentEmail" class="form-label fw-medium">Email</label>
+                                            <input type="email" class="form-control py-2" id="commentEmail" placeholder="you@email.com" required>
+                                            <div class="invalid-feedback">Please enter a valid email.</div>
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="comment" class="form-label text-secondary fw-medium">Comment</label>
-                                        <textarea class="form-control bg-light py-2" id="comment" rows="4" required></textarea>
+                                        <label for="commentText" class="form-label fw-medium">Comment</label>
+                                        <textarea class="form-control py-2" id="commentText" rows="4" placeholder="Share your thoughts..." required></textarea>
+                                        <div class="invalid-feedback">Please write a comment.</div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary px-4 py-2 fw-semibold">Post Comment</button>
+                                    <button type="submit" class="btn btn-primary px-4 py-2 fw-semibold">
+                                        <i class="bi bi-send-fill me-2"></i>Post Comment
+                                    </button>
                                 </form>
                             </div>
                         </div>
-                    <div class="comments-list-container">
-                            <div class="comments-display mt-4">
-                                <h5 class="fw-bold mb-4 text-dark">3 Comments</h5>
 
-                                <div class="comment-item mb-4 shadow-sm p-3 bg-white rounded-4">
+                        <!-- Comments Display -->
+                        <div class="comments-list-container">
+                            <div class="comments-display mt-4">
+                                <!-- FIX: Đủ 3 comment cha theo yêu cầu đề -->
+                                <h5 class="fw-bold mb-4">3 Comments</h5>
+
+                                <!-- Comment 1 (có 1 reply lồng nhau) -->
+                                <div class="comment-item mb-4 shadow-sm p-3 rounded-4">
                                     <div class="d-flex align-items-start">
-                                        <img src="https://picsum.photos/100/100?random=10" class="rounded-circle custom-avatar-img parent-size flex-shrink-0" alt="Avatar">
+                                        <img src="https://picsum.photos/100/100?random=10" class="rounded-circle custom-avatar-img parent-size flex-shrink-0" alt="Avatar Alex">
                                         <div class="ms-3 flex-grow-1">
                                             <div class="d-flex justify-content-between align-items-center mb-1">
-                                                <h6 class="fw-bold mb-0 text-dark">Alex Johnson</h6>
+                                                <h6 class="fw-bold mb-0">Alex Johnson</h6>
                                                 <small class="text-muted fs-7">Jan 16, 2026</small>
                                             </div>
-                                            <p class="text-secondary mb-2 small">This is a fantastic guide! The breakdown of using Bootstrap layout utilities makes it so much easier to follow than plain CSS grid setups.</p>
-                                            <button class="btn btn-link p-0 text-decoration-none fw-semibold btn-reply-interaction"><i class="bi bi-reply-fill me-1"></i>Reply</button>
-                                            
+                                            <p class="mb-2 small">This is a fantastic guide! The breakdown of using Bootstrap layout utilities makes it so much easier to follow than plain CSS grid setups.</p>
+                                            <button class="btn btn-link p-0 text-decoration-none fw-semibold btn-reply-interaction">
+                                                <i class="bi bi-reply-fill me-1"></i>Reply
+                                            </button>
+
+                                            <!-- Nested Reply -->
                                             <div class="comment-reply mt-3 pt-2">
                                                 <div class="d-flex align-items-start">
-                                                    <img src="https://picsum.photos/100/100?random=11" class="rounded-circle custom-avatar-img reply-size flex-shrink-0" alt="Avatar">
+                                                    <img src="https://picsum.photos/100/100?random=11" class="rounded-circle custom-avatar-img reply-size flex-shrink-0" alt="Avatar Vinh">
                                                     <div class="ms-3 flex-grow-1">
                                                         <div class="d-flex justify-content-between align-items-center mb-1">
-                                                            <h6 class="fw-bold mb-0 text-dark">Vinh</h6>
+                                                            <h6 class="fw-bold mb-0">Vinh <span class="badge bg-primary-light ms-1" style="font-size:0.65rem;">Author</span></h6>
                                                             <small class="text-muted fs-7">1 hour ago</small>
                                                         </div>
-                                                        <p class="text-secondary mb-2 small">Thank you, Alex! Glad you found it helpful. Stay tuned for the upcoming advanced components tutorial!</p>
-                                                        <button class="btn btn-link p-0 text-decoration-none fw-semibold btn-reply-interaction"><i class="bi bi-reply-fill me-1"></i>Reply</button>
+                                                        <p class="mb-2 small">Thank you, Alex! Glad you found it helpful. Stay tuned for the upcoming advanced components tutorial!</p>
+                                                        <button class="btn btn-link p-0 text-decoration-none fw-semibold btn-reply-interaction">
+                                                            <i class="bi bi-reply-fill me-1"></i>Reply
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
-                                            </div>
-                                    </div>
-                                </div>
-
-                                <div class="comment-item mb-4 shadow-sm p-3 bg-white rounded-4">
-                                    <div class="d-flex align-items-start">
-                                        <img src="https://picsum.photos/100/100?random=12" class="rounded-circle custom-avatar-img parent-size flex-shrink-0" alt="Avatar">
-                                        <div class="ms-3 flex-grow-1">
-                                            <div class="d-flex justify-content-between align-items-center mb-1">
-                                                <h6 class="fw-bold mb-0 text-dark">Sarah Miller</h6>
-                                                <small class="text-muted fs-7">Jan 14, 2026</small>
-                                            </div>
-                                            <p class="text-secondary mb-2 small">Does this approach integrate well with micro-frontend architectures?</p>
-                                            <button class="btn btn-link p-0 text-decoration-none fw-semibold btn-reply-interaction"><i class="bi bi-reply-fill me-1"></i>Reply</button>
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Comment 2 -->
+                                <div class="comment-item mb-4 shadow-sm p-3 rounded-4">
+                                    <div class="d-flex align-items-start">
+                                        <img src="https://picsum.photos/100/100?random=12" class="rounded-circle custom-avatar-img parent-size flex-shrink-0" alt="Avatar Sarah">
+                                        <div class="ms-3 flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <h6 class="fw-bold mb-0">Sarah Miller</h6>
+                                                <small class="text-muted fs-7">Jan 14, 2026</small>
+                                            </div>
+                                            <p class="mb-2 small">Does this approach integrate well with micro-frontend architectures? I'm currently building a React + Module Federation setup and wondering about style isolation.</p>
+                                            <button class="btn btn-link p-0 text-decoration-none fw-semibold btn-reply-interaction">
+                                                <i class="bi bi-reply-fill me-1"></i>Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Comment 3 (FIX: thêm comment cha thứ 3 theo yêu cầu đề) -->
+                                <div class="comment-item mb-4 shadow-sm p-3 rounded-4">
+                                    <div class="d-flex align-items-start">
+                                        <img src="https://picsum.photos/100/100?random=13" class="rounded-circle custom-avatar-img parent-size flex-shrink-0" alt="Avatar David">
+                                        <div class="ms-3 flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <h6 class="fw-bold mb-0">David Chen</h6>
+                                                <small class="text-muted fs-7">Jan 13, 2026</small>
+                                            </div>
+                                            <p class="mb-2 small">Great writeup! One thing I'd add is using Bootstrap's `ratio` utility for maintaining image aspect ratios — saves a lot of custom CSS headache on card grids.</p>
+                                            <button class="btn btn-link p-0 text-decoration-none fw-semibold btn-reply-interaction">
+                                                <i class="bi bi-reply-fill me-1"></i>Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- /col-lg-8 -->
 
+                <!-- ===== SIDEBAR (4 cols) ===== -->
                 <div class="col-lg-4">
                     <div class="sticky-sidebar">
+
+                        <!-- Search Widget -->
                         <div class="card mb-4 shadow-sm">
                             <div class="card-body p-4">
                                 <h5 class="fw-bold mb-3 text-primary">Search</h5>
                                 <div class="input-group">
-                                    <input type="text" class="form-control border-end-0 bg-light" placeholder="Search articles...">
-                                    <button class="btn btn-primary px-4" type="button"><i class="bi bi-search"></i></button>
+                                    <input type="text" class="form-control border-end-0" id="searchInput" placeholder="Search articles...">
+                                    <button class="btn btn-primary px-4" type="button" id="searchBtn">
+                                        <i class="bi bi-search"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Categories Widget -->
                         <div class="card mb-4 overflow-hidden shadow-sm">
                             <div class="card-header bg-transparent pt-4 px-4 pb-2 border-bottom-0">
                                 <h5 class="fw-bold mb-0 text-primary">Categories</h5>
                             </div>
                             <ul class="list-group list-group-flush px-2 pb-3">
-                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 rounded-3 bg-transparent text-secondary">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 rounded-3 bg-transparent hover-list-item">
                                     <span><i class="bi bi-folder2-open me-2 text-primary"></i>Technology</span>
                                     <span class="badge bg-primary rounded-pill">12</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 rounded-3 bg-transparent text-secondary">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 rounded-3 bg-transparent hover-list-item">
                                     <span><i class="bi bi-folder2-open me-2 text-success"></i>Design</span>
                                     <span class="badge bg-success rounded-pill">8</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 rounded-3 bg-transparent hover-list-item">
+                                    <span><i class="bi bi-folder2-open me-2 text-warning"></i>JavaScript</span>
+                                    <span class="badge bg-warning text-dark rounded-pill">5</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 rounded-3 bg-transparent hover-list-item">
+                                    <span><i class="bi bi-folder2-open me-2 text-info"></i>Career</span>
+                                    <span class="badge bg-info text-dark rounded-pill">3</span>
                                 </li>
                             </ul>
                         </div>
 
+                        <!-- Recent Posts Widget -->
                         <div class="card mb-4 shadow-sm">
                             <div class="card-header bg-transparent pt-4 px-4 pb-2 border-bottom-0">
                                 <h5 class="fw-bold mb-0 text-primary">Recent Posts</h5>
                             </div>
                             <div class="card-body px-4 pb-4 pt-2">
                                 <div class="d-flex align-items-center mb-3">
-                                    <img src="https://picsum.photos/120/120?random=4" class="rounded object-fit-cover" width="60" height="60" alt="Thumb">
+                                    <img src="https://picsum.photos/120/120?random=4" class="rounded object-fit-cover flex-shrink-0" width="60" height="60" alt="Thumb">
                                     <div class="ms-3">
-                                        <h6 class="mb-1 fw-semibold"><a href="#" class="dynamic-line-clamp text-decoration-none">UI/UX Trends in 2026</a></h6>
+                                        <h6 class="mb-1 fw-semibold"><a href="#" class="dynamic-line-clamp text-decoration-none">UI/UX Trends to Watch in 2026</a></h6>
                                         <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>Jan 15, 2026</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="https://picsum.photos/120/120?random=5" class="rounded object-fit-cover flex-shrink-0" width="60" height="60" alt="Thumb">
+                                    <div class="ms-3">
+                                        <h6 class="mb-1 fw-semibold"><a href="#" class="dynamic-line-clamp text-decoration-none">Getting Started with TypeScript in 2026</a></h6>
+                                        <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>Jan 11, 2026</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://picsum.photos/120/120?random=6" class="rounded object-fit-cover flex-shrink-0" width="60" height="60" alt="Thumb">
+                                    <div class="ms-3">
+                                        <h6 class="mb-1 fw-semibold"><a href="#" class="dynamic-line-clamp text-decoration-none">How to Ace a Frontend Interview</a></h6>
+                                        <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>Jan 8, 2026</small>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Tags Cloud Widget -->
                         <div class="card mb-4 shadow-sm">
                             <div class="card-header bg-transparent pt-4 px-4 pb-2 border-bottom-0">
                                 <h5 class="mb-0 fw-bold text-primary">Tags</h5>
@@ -202,42 +312,99 @@
                                     <a href="#" class="badge bg-light text-secondary border text-decoration-none hover-tag">HTML5</a>
                                     <a href="#" class="badge bg-light text-secondary border text-decoration-none hover-tag">CSS3</a>
                                     <a href="#" class="badge bg-light text-secondary border text-decoration-none hover-tag">JavaScript</a>
+                                    <a href="#" class="badge bg-light text-secondary border text-decoration-none hover-tag">Bootstrap</a>
+                                    <a href="#" class="badge bg-light text-secondary border text-decoration-none hover-tag">React</a>
+                                    <a href="#" class="badge bg-light text-secondary border text-decoration-none hover-tag">Node.js</a>
+                                    <a href="#" class="badge bg-light text-secondary border text-decoration-none hover-tag">Git</a>
+                                    <a href="#" class="badge bg-light text-secondary border text-decoration-none hover-tag">UI/UX</a>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
+                <!-- /col-lg-4 -->
+
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="py-4 text-center" style="background: var(--dark, #0f172a); color: #f8fafc;">
+        <div class="container">
+            <p class="mb-1 fw-semibold">Bùi Quang Vinh</p>
+            <p class="small mb-0" style="color: #94a3b8;">&copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-<script>
+    <script>
+        // ── DARK MODE TOGGLE ──────────────────────────────────────────
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleIcon = document.getElementById('theme-toggle-icon');
-        const htmlElement = document.documentElement;
+        const htmlEl = document.documentElement;
 
-        // Kiểm tra xem người dùng trước đó đã lưu trạng thái theme chưa
         const savedTheme = localStorage.getItem('theme') || 'light';
-        htmlElement.setAttribute('data-theme', savedTheme);
+        htmlEl.setAttribute('data-theme', savedTheme);
+        applyNavbarTheme(savedTheme);
         updateIcon(savedTheme);
 
         themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateIcon(newTheme);
+            const current = htmlEl.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            htmlEl.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateIcon(next);
+            applyNavbarTheme(next);
         });
 
         function updateIcon(theme) {
+            themeToggleIcon.className = theme === 'dark' ? 'bi bi-sun-fill fs-5' : 'bi bi-moon-fill fs-5';
+        }
+
+        function applyNavbarTheme(theme) {
+            const nav = document.getElementById('mainNavbar');
             if (theme === 'dark') {
-                themeToggleIcon.className = 'bi bi-sun-fill fs-5';
+                nav.classList.remove('navbar-light', 'bg-white');
+                nav.classList.add('navbar-dark');
+                nav.style.backgroundColor = '#1e293b';
             } else {
-                themeToggleIcon.className = 'bi bi-moon-fill fs-5';
+                nav.classList.remove('navbar-dark');
+                nav.classList.add('navbar-light', 'bg-white');
+                nav.style.backgroundColor = '';
             }
         }
-</script>
+
+        // ── COMMENT FORM với Bootstrap validation + Toast feedback ────
+        const commentForm = document.getElementById('commentForm');
+        const toast = new bootstrap.Toast(document.getElementById('commentToast'));
+
+        commentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!commentForm.checkValidity()) {
+                commentForm.classList.add('was-validated');
+                return;
+            }
+            // Reset form và hiện toast
+            commentForm.reset();
+            commentForm.classList.remove('was-validated');
+            toast.show();
+        });
+
+        // ── SEARCH (cơ bản — scroll đến bài khớp tiêu đề) ───────────
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            const q = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (!q) return;
+            const titles = document.querySelectorAll('article .card-title');
+            let found = false;
+            titles.forEach(t => {
+                if (t.textContent.toLowerCase().includes(q)) {
+                    t.closest('article').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    found = true;
+                }
+            });
+            if (!found) alert(`No articles found for "${q}"`);
+        });
+    </script>
+</body>
 </html>
