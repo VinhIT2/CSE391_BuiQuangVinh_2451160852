@@ -94,7 +94,63 @@
 
 - Badge trên card:
 
-![alt text](image.png)
+![alt text](./assets/Screenshot/image2-B1.png)
 
-### Câu B2:
+## PHẦN C:
 
+### Câu C1:
+
+1. **Navigation bar ngang:** Flexbox. Định dạng một chiều (1D), tối ưu cho việc điều phối khoảng trống thừa (justify-content) và căn dọc (align-items).
+
+2. **Lưới ảnh Instagram:** Grid. Định dạng cấu trúc hai chiều (2D). Chỉ định repeat(3, 1fr) cố định chuẩn xác số cột bất kể số lượng ảnh thay đổi liên tục.
+
+3. **Layout blog (main + sidebar):** Grid. Phù hợp nhất để dựng bộ khung thô vĩ mô (Macro layout) cho toàn bộ trang web.
+
+4. **Footer với 4 cột thông tin:** Flexbox hoặc Grid. Nếu cần các cột co giãn mềm mại linh hoạt theo độ dài text chọn Flexbox. Nếu cần căn hàng tăm tắp dạng bảng chọn Grid.
+
+5. **Card sản phẩm (nút dính đáy):** Flexbox hướng cột (flex-direction: column). Cơ chế tính toán khoảng trống dư thừa thông qua margin-top: auto ép nút bấm luôn cố định dưới chân thẻ card.
+
+### Câu C2:
+
+- Lỗi 1: Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
+
+**Nguyên nhân:** Các card chứa tiêu đề độ dài không đều nhau. Thẻ card chứa text ngắn sẽ khiến nút bị kéo lên cao, làm mất cân đối giao diện.
+
+**Sửa lỗi:**
+```css
+.card {
+    display: flex;
+    flex-direction: column;
+}
+.card .btn {
+    margin-top: auto;
+}
+```
+- Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
+
+**Nguyên nhân:** Khai báo thiếu thuộc tính phân bổ vị trí các Item trên trục tọa độ main asis (justify-content)
+
+**Sửa lỗi:**
+```css
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+```
+- Lỗi 3: Sidebar bị co lại khi content quá dài
+
+**Nguyên nhân:** Giá trị mặc định ban đầu của thuộc tính flex-shrink là 1. Khi vùng nội dung chính phình to quá mức, trình duyệt tự động bóp nghẹt kích thước sidebar để tránh tràn khối.
+
+**Sửa lỗi:**
+```css
+.sidebar {
+    width: 250px;
+    flex-shrink: 0; 
+}
+```
+
+## PHẦN D:
+
+**Link video:** https://drive.google.com/drive/folders/1ataoOiCyM-XaEI_XOV-ZxbISVGCGq7XD
