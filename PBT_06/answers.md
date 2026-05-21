@@ -39,6 +39,20 @@
 - `.container-fluid`: Cố định luôn chiếm toàn bộ không gian **chiều rộng 100%** ở mọi cấu hình màn hình thiết bị.
 - `.container-md`: Trải phẳng chiếm 100% chiều rộng khi ở màn hình nhỏ hơn 768px, và bắt đầu thu hẹp giữ cố định `max-width` từ mốc màn hình `md` (768px) trở lên.
 
+### PHẦN B:
+
+#### CÂU B1:
+
+- Mobile (375px):
+![alt text](./assets/image(375)-B1.png)
+
+- Tablet (768px):
+![alt text](./assets/image(768)-B1.png)
+
+- Desktop (1200px):
+![alt text](./assets/image(1200)-B1.png)
+
+
 ### PHẦN C
 
 #### Câu C1 
