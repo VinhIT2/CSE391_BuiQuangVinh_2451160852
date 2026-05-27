@@ -30,7 +30,6 @@ for (let i = 0; i < students.length; i++) {
     console.log(`| ${stt} | ${name} | ${avg} | ${rank} |`);
 }
 
-// 3. Đếm số lượng mỗi xếp loại
 const rankCounts = { "Giỏi": 0, "Khá": 0, "Trung bình": 0, "Yếu": 0 };
 let maxStudent = students[0];
 let minStudent = students[0];

@@ -79,3 +79,48 @@ const html =
     <span>Giá: ${price}đ</span>
 </div>`;
 ```
+
+## PHẦN C
+
+### Câu C1
+
+**Danh sách các lỗi phát hiện và cách sửa**
+
+Lỗi 1 — if (giaSauGiam = 0) → dùng `=` thay vì `===`, phép gán không phải so sánh.
+Lỗi 2 — tinhGiaGiamGia("100000", 20) → truyền `string` thay vì `number`.
+Lỗi 3 — Thiếu validate giaBan → không kiểm tra kiểu/giá trị âm.
+Lỗi 4 — var giamGia → biến không đổi nên dùng const.
+Lỗi 5 — Thiếu `;` ở nhiều dòng → có thể gây lỗi ASI edge case.
+Lỗi 6 (ẩn) — for (var i = 0; ...) + closure trong setTimeout, var là function scope, tất cả callback dùng chung i=5 khi chạy. Dùng let tạo block scope riêng từng vòng → In đúng 0-4.
+```js
+function tinhGiaGiamGia(giaBan, phanTramGiam) {
+    if (typeof giaBan !== 'number' || giaBan < 0) {
+        return "Giá bán không hợp lệ";
+    }
+    if (phanTramGiam < 0 || phanTramGiam > 100) {
+        return "Phần trăm giảm không hợp lệ";
+    }
+
+    const giamGia = giaBan * phanTramGiam / 100;
+    const giaSauGiam = giaBan - giamGia;
+
+    if (giaSauGiam === 0) {
+        console.log("Sản phẩm miễn phí!");
+    }
+
+    return giaSauGiam;
+}
+
+// Test
+const gia = tinhGiaGiamGia(100000, 20);
+console.log("Giá sau giảm: " + gia + "đ");
+
+const gia2 = tinhGiaGiamGia(50000, 110);
+console.log("Giá: " + gia2);
+
+for (let i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("Item " + i);
+    }, 1000);
+}
+```
