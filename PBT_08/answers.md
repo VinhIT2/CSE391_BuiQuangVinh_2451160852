@@ -116,3 +116,57 @@ console.log(product.specs.ram);        // Output: 16
 **Giải thích tại sao product.specs.ram đổi thành 16**
 
 > Toán tử spread (...) chỉ thực hiện Shallow Copy (sao chép nông). Nó chỉ nhân bản các thuộc tính ở lớp bề mặt (top-level properties). Đối với các thuộc tính là Object lồng nhau như specs, copy.specs và product.specs vẫn cùng trỏ về một địa chỉ vùng nhớ (reference) giống nhau. Do đó, thay đổi giá trị bên trong copy.specs sẽ trực tiếp tác động và làm thay đổi object gốc product.
+
+## PHẦN C
+
+### Câu C1:
+
+```JavaScript
+const processOrders = (orders) => 
+    orders
+        .filter(({ status, total }) => status === "completed" && total > 100000)
+        .map(({ id, customer, total }) => {
+            const discount = total * 0.1;
+            return { id, customer, total, discount, finalTotal: total - discount };
+        })
+        .sort((a, b) => b.finalTotal - a.finalTotal);
+```
+
+### Câu C2:
+```JS
+const miniArray = {
+    map(arr, fn) {
+        const result = [];
+        for (let i = 0; i < arr.length; i++) {
+            result.push(fn(arr[i], i, arr));
+        }
+        return result;
+    },
+    
+    filter(arr, fn) {
+        const result = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (fn(arr[i], i, arr)) {
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    },
+    
+    reduce(arr, fn, initialValue) {
+        let hasInitial = initialValue !== undefined;
+        let accumulator = hasInitial ? initialValue : arr[0];
+        let startIndex = hasInitial ? 0 : 1;
+        
+        for (let i = startIndex; i < arr.length; i++) {
+            accumulator = fn(accumulator, arr[i], i, arr);
+        }
+        return accumulator;
+    }
+};
+
+// === CHẠY KIỂM THỬ (TEST EXAMPLES) ===
+console.log(miniArray.map([1, 2, 3], x => x * 2));         // [2, 4, 6]
+console.log(miniArray.filter([1, 2, 3, 4], x => x > 2));     // [3, 4]
+console.log(miniArray.reduce([1, 2, 3, 4], (a, b) => a + b, 0)); // 10
+```
