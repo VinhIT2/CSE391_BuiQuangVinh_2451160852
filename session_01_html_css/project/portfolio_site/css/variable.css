@@ -1,0 +1,10 @@
+:root {
+    --color-primary: #6366f1;    /* Indigo */
+    --color-secondary: #8b5cf6;  /* Purple */
+    --color-dark: #1e293b;       /* Slate dark */
+    --color-light: #f8fafc;      /* Slate light */
+    --color-text: #334155;       /* Slate text */
+    --color-orange: orange;
+    --font-main: 'Segoe UI', sans-serif;
+    --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
