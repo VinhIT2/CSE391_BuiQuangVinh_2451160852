@@ -1,0 +1,52 @@
+/* Khống chế cứng ảnh đại diện luôn luôn tròn và có tỷ lệ vuông 1:1 */
+.custom-avatar-img {
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    border: 2px solid var(--slate-200);
+}
+
+/* Avatar nhỏ hơn cho bình luận cha */
+.custom-avatar-img.parent-size {
+    width: 44px !important;
+    height: 44px !important;
+}
+
+/* Avatar siêu nhỏ gọn nằm gọn gàng cho bình luận con */
+.custom-avatar-img.reply-size {
+    width: 34px !important;
+    height: 34px !important;
+}
+
+/* Đường kẻ lề trái đánh dấu bình luận con lồng nhau */
+.comment-reply {
+    border-left: 2px solid var(--slate-200);
+    padding-left: 1rem;
+}
+
+/* Kiểu dáng nút bấm Reply */
+.btn-reply-interaction {
+    color: var(--bs-primary) !important;
+    font-size: 0.8rem;
+    transition: color var(--transition-fast, 0.2s) ease;
+}
+
+.btn-reply-interaction:hover {
+    color: #0d9488 !important;
+}
+
+/* Cỡ chữ nhỏ phụ cho thời gian */
+.fs-7 {
+    font-size: 0.75rem;
+}
+/* Tăng trải nghiệm mượt mà cho ô nhập liệu */
+.comment-section-wrapper .form-control {
+    border-radius: 8px !important;
+    font-size: 0.9rem;
+    transition: all var(--transition-fast, 0.2s) ease;
+}
+
+.comment-section-wrapper .form-control:focus {
+    background-color: #ffffff !important;
+    border-color: var(--bs-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(20, 184, 166, 0.15) !important;
+}
