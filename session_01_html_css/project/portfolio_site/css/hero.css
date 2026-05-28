@@ -1,0 +1,70 @@
+.hero {
+    min-height: 100vh; 
+    background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary)); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-light);
+    padding: 0 1rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.hero-title span {
+    color: orange;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem; 
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); 
+}
+
+.cta-button:active {
+    transform: scale(0.99);
+}
+
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 2.5rem; /* Chuẩn khít Specs Mobile: 2.5rem */
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .cta-button {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+    }
+}
