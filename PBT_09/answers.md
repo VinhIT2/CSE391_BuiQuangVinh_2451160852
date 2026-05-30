@@ -72,4 +72,4 @@ Nếu uncomment e.stopPropagation(), output thay đổi thành:
 BUTTON
 ```
 
-### PHẦN B
+### PHẦN C

@@ -1,0 +1,109 @@
+body {
+  font-family: system-ui, sans-serif;
+  transition:
+    background 0.3s,
+    color 0.3s;
+  margin: 0;
+  padding: 20px;
+}
+kbd {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.gallery-container {
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+.gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 3px solid transparent;
+}
+.gallery img:focus-visible {
+  border-color: #2563eb;
+  outline: none;
+}
+.indicator-list {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #d1d5db;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.dot.active {
+  background: #2563eb;
+  transform: scale(1.2);
+}
+.dot:focus-visible {
+  outline: 2px solid #2563eb;
+}
+
+.palette-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
+  z-index: 9999;
+}
+.palette-box {
+  background: white;
+  color: #111827;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  height: fit-content;
+  overflow: hidden;
+}
+#paletteInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 16px;
+  outline: none;
+}
+#commandList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.command-item {
+  padding: 12px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.command-item.selected,
+.command-item:hover {
+  background: #f3f4f6;
+}
+.hidden {
+  display: none !important;
+}
+body.dark-mode {
+  background: #111827;
+  color: #f9fafb;
+}
+body.dark-mode kbd {
+  color: #111827;
+}

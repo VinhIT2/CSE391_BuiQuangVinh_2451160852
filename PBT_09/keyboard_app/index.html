@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Accessibility App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="padding:20px; text-align:center;">
+        <p>Bấm <kbd>Ctrl</kbd> + <kbd>K</kbd> để mở Command Palette</p>
+        <p>Phím mũi tên <kbd>←</kbd> <kbd>→</kbd> đổi ảnh, <kbd>Space</kbd> Auto-play</p>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery" aria-label="Image Gallery" role="region">
+            <img id="galleryImg" src="https://picsum.photos/id/10/500/300" alt="Gallery Image 1">
+        </div>
+        <div class="indicator-list" id="indicators"></div>
+    </div>
+
+    <div id="palette" class="palette-overlay hidden" role="dialog" aria-modal="true" aria-label="Command Palette">
+        <div class="palette-box">
+            <input type="text" id="paletteInput" placeholder="Type a command (e.g., Dark, Light, Next, Prev)..." aria-label="Search command">
+            <ul id="commandList" role="listbox"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
