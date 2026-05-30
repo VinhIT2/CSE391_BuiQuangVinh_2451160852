@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h2>Bảng Điều Khiển Tổng Hợp</h2>
+            <div class="meta-info">
+                <button id="refreshAllBtn">Đồng Bộ Hệ Thống</button>
+                <span id="loadTimeDisplay">Thời gian tải: -- ms</span>
+            </div>
+        </header>
+
+        <div class="grid-dashboard">
+            <div class="widget" id="widget-0">
+                <h3>👥 Danh Sách Quản Trị</h3>
+                <div class="widget-content"></div>
+            </div>
+            <div class="widget" id="widget-1">
+                <h3>🌤️ Trung Tâm Thời Tiết</h3>
+                <div class="widget-content"></div>
+            </div>
+            <div class="widget" id="widget-2">
+                <h3>🐕 Linh Vật May Mắn</h3>
+                <div class="widget-content"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="weather-box">
+        <h2>Dự Báo Thời Tiết</h2>
+        <form id="searchForm">
+            <input type="text" id="cityInput" placeholder="Nhập tên thành phố (vd: Hanoi, London)..." autocomplete="off">
+            <button type="submit">Tìm</button>
+        </form>
+
+        <div class="history-section">
+            <span>Lịch sử:</span>
+            <div id="historyList"></div>
+        </div>
+
+        <div id="loadingState" class="state hidden">
+            <div class="spinner"></div>
+            <p>Đang tải dữ liệu thời tiết...</p>
+        </div>
+
+        <div id="errorState" class="state hidden">
+            <p class="error-txt"></p>
+        </div>
+
+        <div id="successState" class="state hidden">
+            <h3 id="cityName">---</h3>
+            <div class="weather-info">
+                <span id="weatherIcon" style="font-size: 48px;">☀️</span>
+                <h1 id="tempDisplay">--°C</h1>
+            </div>
+            <p id="weatherDesc">---</p>
+            <div class="details">
+                <div>💧 Độ ẩm: <span id="humidityDisplay">--%</span></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

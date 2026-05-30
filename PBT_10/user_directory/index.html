@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h2>Danh Sách Thành Viên</h2>
+            <div class="actions-bar">
+                <input type="text" id="searchUser" placeholder="Tìm kiếm theo tên hoặc email...">
+                <button id="openAddModalBtn">+ Thêm Thành Viên</button>
+            </div>
+        </header>
+
+        <main id="userContainer" class="user-grid"></main>
+    </div>
+
+    <div id="userModal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modalTitle">Thêm Người Dùng</h3>
+            <form id="userForm">
+                <input type="hidden" id="userIdField">
+                <div class="form-group">
+                    <label>Tên hiển thị</label>
+                    <input type="text" id="formName" required>
+                </div>
+                <div class="form-group">
+                    <label>Địa chỉ Email</label>
+                    <input type="email" id="formEmail" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" id="closeModalBtn" class="btn-secondary">Hủy</button>
+                    <button type="submit" class="btn-primary">Lưu thông tin</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="app.js"></script>
+</body>
+</html>
