@@ -6,6 +6,11 @@ import Footer from "./components/Footer";
 // Import 2 file thử thách theo đúng yêu cầu đề bài
 import UserCard from "./components/UserCard";
 import PriceTag from "./components/PriceTag";
+
+import NumberState from "./components/NumberState";
+import StringState from "./components/StringState";
+import BooleanState from "./components/BooleanState";
+import MultipleStates from "./components/MultipleStates";
 // Bài 0.1: Component UserProfile
 function UserProfile() {
     return (
