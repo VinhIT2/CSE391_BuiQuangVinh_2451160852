@@ -14,5 +14,6 @@
 
 2. Khi nào nó sẽ render lại?
 > Component sẽ render lại (Re-render) khi và chỉ khi Trạng thái (State) của component đó thay đổi (thông qua hàm set của useState, ví dụ: setStep) hoặc khi Props truyền từ component cha vào thay đổi.
-
+ 
+ 
 
