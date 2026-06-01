@@ -15,5 +15,13 @@
 2. Khi nào nó sẽ render lại?
 > Component sẽ render lại (Re-render) khi và chỉ khi Trạng thái (State) của component đó thay đổi (thông qua hàm set của useState, ví dụ: setStep) hoặc khi Props truyền từ component cha vào thay đổi.
  
- 
+# Tier 3
 
+1. Props là gì? Dùng để làm gì?
+> Props (viết tắt của Properties) là các tham số, đối số được dùng để truyền dữ liệu từ Component cha xuống Component con. Props giúp component con có thể tái sử dụng linh hoạt với nhiều nguồn dữ liệu khác nhau thay vì bị cố định giá trị.
+
+2. Sự khác nhau giữa Export Default và Named Export?
+
+>Export Default: Dùng để xuất một thành phần chính và duy nhất từ một file. Khi file khác import, họ có thể đặt tên tùy ý và không cần dấu ngoặc nhọn {} (Ví dụ: import UserProfile from "./components/UserProfile";).
+
+>Named Export: Dùng khi muốn xuất nhiều thành phần trong cùng một file bằng cách đặt từ khóa export trước mỗi hàm. Khi file khác gọi, bắt buộc phải dùng chính xác tên hàm và đặt trong dấu ngoặc nhọn {} (Ví dụ: import { LifecycleDemo, FlowDemo } from "./App";).

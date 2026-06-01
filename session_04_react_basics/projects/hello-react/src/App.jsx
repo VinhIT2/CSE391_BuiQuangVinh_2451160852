@@ -1,4 +1,11 @@
 import { useState } from "react";
+// Import 3 file bài tập chính
+import Header from "./components/Header";
+import ProductCard from "./components/ProductCard";
+import Footer from "./components/Footer";
+// Import 2 file thử thách theo đúng yêu cầu đề bài
+import UserCard from "./components/UserCard";
+import PriceTag from "./components/PriceTag";
 // Bài 0.1: Component UserProfile
 function UserProfile() {
     return (
