@@ -16,6 +16,11 @@ import ClickEvents from "./components/ClickEvents";
 import InputEvents from "./components/InputEvents";
 import KeyboardEvents from "./components/KeyboardEvents";
 import FormEvents from "./components/FormEvents";
+
+import ListBasics from "./components/ListBasics";
+import CreateItem from "./components/CreateItem";
+import DeleteItem from "./components/DeleteItem";
+import UpdateItem from "./components/UpdateItem";
 // Bài 0.1: Component UserProfile
 function UserProfile() {
     return (
