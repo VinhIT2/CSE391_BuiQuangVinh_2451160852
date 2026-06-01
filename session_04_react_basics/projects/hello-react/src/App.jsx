@@ -11,6 +11,11 @@ import NumberState from "./components/NumberState";
 import StringState from "./components/StringState";
 import BooleanState from "./components/BooleanState";
 import MultipleStates from "./components/MultipleStates";
+
+import ClickEvents from "./components/ClickEvents";
+import InputEvents from "./components/InputEvents";
+import KeyboardEvents from "./components/KeyboardEvents";
+import FormEvents from "./components/FormEvents";
 // Bài 0.1: Component UserProfile
 function UserProfile() {
     return (
